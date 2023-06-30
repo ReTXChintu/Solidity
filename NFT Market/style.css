@@ -1,0 +1,118 @@
+.navbar {
+  background-color: rgb(60, 56, 56);
+  border-radius: 20px;
+  position: fixed;
+  width: 99%;
+  top: 2px;
+}
+
+.navbar ul {
+  overflow: auto;
+}
+
+.navbar li {
+  float: left;
+  list-style: none;
+  padding: 17px 20px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: bisque;
+}
+
+.navbar li a:hover {
+  cursor: pointer;
+  color: rgb(175, 159, 140);
+}
+
+.navBtns {
+  float: right;
+  margin-right: 10px;
+  margin-top: 8px;
+  padding: 8px 20px;
+  color: rgb(11, 11, 11);
+  border-radius: 30px;
+}
+
+.navBtns:hover {
+  cursor: pointer;
+  color: rgb(81, 78, 75);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.content {
+  margin-top: 100px;
+}
+
+.btnDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+#homeBtns {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
+
+.insideBtns {
+  margin-right: 10px;
+  margin-top: 8px;
+  padding: 8px 20px;
+  color: rgb(11, 11, 11);
+  border-radius: 30px;
+}
+
+.insideBtns:hover {
+  cursor: pointer;
+  color: rgb(89, 77, 64);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+/* .showAssets {
+  margin: 10px;
+  color: antiquewhite;
+  background-color: crimson;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.showAssets:hover {
+  background-color: antiquewhite;
+  color: crimson;
+  cursor: pointer;
+}
+*/
+
+.mint {
+  display: flex;
+}
+
+.mint input {
+  margin: 5px;
+}
+
+.insideBtns:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  pointer-events: none;
+}
+.setSale {
+  display: flex;
+  flex-direction: column;
+}
+
+.startSale {
+  display: flex;
+}
+.startSale input {
+  margin: 5px;
+}
+
+#sellerBtn {
+  width: 300px;
+}

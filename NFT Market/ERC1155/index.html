@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERC1155</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- INFO -->
+    <h1 id="heading">ERC-1155 Token</h1>
+    <div id="info">
+      <h3 id="ownerAddress">Owner Address:</h3>
+      <h3 id="userAddress">User Address:</h3>
+    </div>
+    <div class="buttons">
+      <button
+        type="button"
+        class="connect"
+        id="showNFTs"
+        style="display: none"
+        onclick="showNFTs()"
+      >
+        My Tokens
+      </button>
+      <button
+        class="connect"
+        id="disconnectButton"
+        style="display: none"
+        onclick="connect()"
+      >
+        Disconnect
+      </button>
+      <button
+        type="button"
+        class="connect"
+        id="connectButton"
+        onclick="connect()"
+      >
+        Connect to Metamask
+      </button>
+      <br />
+    </div>
+    <div id="wholecontainer">
+      <!-- Mint -->
+      <div class="container">
+        <!-- Mint -->
+        <div class="mint">
+          <h3>Mint</h3>
+          <input type="number" id="idforminting" placeholder="Enter tokenId" />
+          <input
+            type="number"
+            id="amountforminting"
+            placeholder="Enter number of tokens"
+          />
+          <button onclick="mintTokens()"id="mintBtn" class="button">Mint</button>
+        </div>
+        <div class="mintBatch">
+          <h3>Batch Mint</h3>
+          <input type="text" id="idsforminting" placeholder="Enter token ids" />
+          <input
+            type="text"
+            id="amountsforminting"
+            placeholder="Enter amounts"
+          />
+          <button onclick="batchMint()" class="button">Mint</button>
+        </div>
+      </div>
+      <!-- Burn -->
+      <div class="container">
+        <div class="burn">
+          <h3>Burn</h3>
+          <input type="number" id="idforburning" placeholder="Enter token id" />
+          <input
+            type="number"
+            id="amountforburning"
+            placeholder="Enter number of tokens"
+          />
+          <button onclick="burnTokens()" class="button">Burn</button>
+        </div>
+        <div class="burn">
+          <h3>Batch Burn</h3>
+          <input type="number" id="idforburning" placeholder="Enter token id" />
+          <input
+            type="number"
+            id="amountforburning"
+            placeholder="Enter number of tokens"
+          />
+          <button onclick="burnTokens()" class="button">Burn</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="balanceOf">
+          <h3>Check Balance</h3>
+          <input
+            type="text"
+            id="accountforchecking"
+            placeholder="Enter account address"
+          />
+          <input
+            type="number"
+            id="idforchecking"
+            placeholder="Enter token id"
+          />
+          <button onclick="balanceOf()" class="button">Check</button>
+        </div>
+        <div class="balanceOf">
+          <h3>Check Balance of Batch</h3>
+          <input
+            type="text"
+            id="accountsforchecking"
+            placeholder="Enter account address"
+          />
+          <input type="text" id="idsforchecking" placeholder="Enter token id" />
+          <button onclick="balanceOfBatch()" class="button">Check</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="setApproval">
+          <h3>Set Approval For All</h3>
+          <input
+            type="text"
+            id="addressforapproval"
+            placeholder="Enter the operator address"
+          />
+          <div id="radioButton">
+            <input type="radio" name="isApprove" value="approve" />
+            <label>Approve</label>
+            <input type="radio" name="isApprove" value="reject" checked />
+            <label>Reject</label>
+          </div>
+          <button class="button" onclick="approve()">Approve</button>
+        </div>
+        <div class="setApproval">
+          <h3>Check Approval</h3>
+          <input
+            type="text"
+            id="owneraddressforcheckingapproval"
+            placeholder="Enter the owner address"
+          />
+          <input
+            type="text"
+            id="operatoraddressforcheckingapproval"
+            placeholder="Enter the operator address"
+          />
+          <button class="button" onclick="checkApproval()">Check</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="safeTransfer">
+          <h3>Safe Transfer From</h3>
+          <input
+            type="text"
+            id="fromAddress"
+            placeholder="Enter from address"
+          />
+          <input type="text" id="toAddress" placeholder="Enter to address" />
+          <input
+            type="number"
+            id="idfortransfer"
+            placeholder="Enter Token Id"
+          />
+          <input
+            type="number"
+            id="amountfortransfer"
+            placeholder="Enter Amount"
+          />
+          <button class="button" onclick="safeTransfer()">Transfer</button>
+        </div>
+        <div class="safeTransfer">
+          <h3>Safe Batch Transfer From</h3>
+          <input
+            type="text"
+            id="fromAddresses"
+            placeholder="Enter from address"
+          />
+          <input type="text" id="toAddresses" placeholder="Enter to address" />
+          <input type="text" id="idsfortransfer" placeholder="Enter Token Id" />
+          <input
+            type="text"
+            id="amountsfortransfer"
+            placeholder="Enter Amount"
+          />
+          <button class="button" onclick="safeBatchTransfer()">Transfer</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="myTokens" style="display: none">
+      <!-- <div id="nftContainer" style="display: flex"></div> -->
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

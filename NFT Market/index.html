@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+      /> -->
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="./index.html" id="home">Home</a></li>
+        <li><a href="./ERC20/index.html">ERC20</a></li>
+        <li><a href="./ERC721/index.html">ERC721</a></li>
+        <li><a href="./ERC1155/index.html">ERC1155</a></li>
+        <button class="navBtns" id="button" onclick="connect()">
+          <img
+            src="./MetaMask_Fox.svg.png"
+            alt="Error"
+            style="width: 15px"
+          />Connect to Metamask
+        </button>
+        <button
+          class="navBtns"
+          id="showSaleTokens"
+          onclick="showOnSaleTokens()"
+        >
+          Sale Tokens
+        </button>
+        <button
+          class="navBtns"
+          id="showAuctionTokens"
+          onclick="showOnAuctionTokens()"
+        >
+          Auction Tokens
+        </button>
+      </ul>
+    </nav>
+    <div class="content" style="display: none">
+      <h3 class="ownerAddress">Owner Address</h3>
+      <h3 class="userAddress">User Address</h3>
+      <div class="btnDiv">
+        <h2>Mint Tokens</h2>
+        <p>NB.: For ERC721, token Id and number of tokens must be zero</p>
+        <div class="mint">
+          <input type="number" id="idForMinting" placeholder="Enter token id" />
+          <input
+            type="number"
+            id="numberOfTokensForMinting"
+            placeholder="Enter number of tokens"
+          />
+          <input
+            type="text"
+            id="contractAddress"
+            placeholder="Enter contract address"
+          />
+          <input type="text" id="tokenURI" placeholder="Enter Token URI" />
+          <button class="insideBtns" onclick="mint()">Mint</button>
+        </div>
+        <button class="insideBtns" onclick="showAssets()" id="homeBtns">
+          Show Assets
+        </button>
+      </div>
+      <div class="setSale" style="display: none">
+        <div id="startSale">
+          <input type="number" id="idForSale" placeholder="Enter token id" />
+          <input type="number" id="amountForSale" placeholder="Enter amount" />
+          <input
+            type="text"
+            id="contractAddressForSale"
+            placeholder="Enter COntract Address"
+          />
+          <input
+            type="number"
+            id="priceForSale"
+            placeholder="Enter Price in Wei"
+          />
+          <button class="insideBtns" onclick="setOnSale()">Set Sale</button>
+        </div>
+        <button class="insideBtns" id="sellerBtn" onclick="showMySales()">
+          Are you a seller?
+        </button>
+      </div>
+
+      <div class="onSaleTokens" style="display: none">
+        <h3>Sale Tokens</h3>
+      </div>
+
+      <div class="myAssets" style="display: none"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+    ></script> -->
+</html>

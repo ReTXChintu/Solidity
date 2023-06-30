@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERC-20</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="wholecontainer">
+      <h1 id="heading">ERC-20 Token</h1>
+      <div class="info">
+        <h3 id="tokenName">Name:</h3>
+        <h3 id="symbol">Symbol:</h3>
+        <h3 id="decimals">Decimal:</h3>
+        <h3 id="userAddress">User Address:</h3>
+        <h3 id="totalSupply">Total Supply:</h3>
+        <h3 id="balance">Balance:</h3>
+      </div>
+      <button type="button" id="connect" onclick="connect()">Connect to Metamask</button>
+
+      <div class="container">
+        <div class="mint">
+          <h3>Mint</h3>
+          <input type="number" id="mintingAmount" placeholder="Enter Amount" />
+          <button onclick="mintTokens()" class="button">Mint</button>
+        </div>
+
+        <div class="burn">
+          <h3>Burn</h3>
+          <input type="number" id="burnAmount" placeholder="Enter Amount" />
+          <button onclick="burnTokens()" class="button">Burn</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="transfer">
+          <h3>Transfer Tokens</h3>
+          <input
+            type="text"
+            id="toAddress"
+            placeholder="Enter recipient address"
+          />
+          <input type="number" id="transferAmount" placeholder="Enter amount" />
+          <button onclick="transferTokens()" class="button">Transfer</button>
+        </div>
+
+        <div class="transferFrom">
+          <h3>Transfer Tokens From</h3>
+          <input
+            type="text"
+            id="spenderAddress"
+            placeholder="Enter token owner address"
+          />
+          <input
+            type="text"
+            id="recipientAddress"
+            placeholder="Enter recipient address"
+          />
+          <input type="number" id="amountTransfer" placeholder="Enter amount" />
+          <button onclick="tokenTransferFrom()" class="button">Transfer</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="approval">
+          <h3>Approval</h3>
+          <input
+            type="text"
+            id="approvedAddress"
+            placeholder="Enter address to allow"
+          />
+          <input type="number" id="approvedAmount" placeholder="Enter amount" />
+          <button onclick="approves()" class="button">Approve</button>
+        </div>
+
+        <div class="allowance">
+          <h3>Allowance</h3>
+          <input
+            type="text"
+            id="tokenOwnerAddress"
+            placeholder="Enter token owner address"
+          />
+          <input
+            type="text"
+            id="approvalAddress"
+            placeholder="Enter token allowed address"
+          />
+          <button onclick="allowanceCheck()" class="button">check</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
